@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE698DB81C398FE6002584EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE698DB71C398FE6002584EC /* main.m */; };
+		DE698DBB1C398FE6002584EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE698DBA1C398FE6002584EC /* AppDelegate.m */; };
+		DE698DBE1C398FE6002584EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE698DBD1C398FE6002584EC /* ViewController.m */; };
+		DE698DC11C398FE6002584EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE698DBF1C398FE6002584EC /* Main.storyboard */; };
+		DE698DC31C398FE6002584EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE698DC21C398FE6002584EC /* Assets.xcassets */; };
+		DE698DCB1C3994F6002584EC /* sender.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE698DCA1C3994F6002584EC /* sender.plist */; };
+		DE698DCE1C3995D3002584EC /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE698DCD1C3995D3002584EC /* VideoCell.m */; };
+		DE698DD61C39DAAA002584EC /* TVServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE698DD51C39DAAA002584EC /* TVServices.framework */; };
+		DE698DDA1C39DAAA002584EC /* ServiceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DE698DD91C39DAAA002584EC /* ServiceProvider.m */; };
+		DE698DDE1C39DAAA002584EC /* TelematShelfExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE698DD31C39DAAA002584EC /* TelematShelfExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DE698DE31C39DB70002584EC /* sender.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE698DCA1C3994F6002584EC /* sender.plist */; };
+		DE698DE61C39E9E2002584EC /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE698DE51C39E9E2002584EC /* VideoPlayerViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE698DDC1C39DAAA002584EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE698DAB1C398FE6002584EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE698DD21C39DAAA002584EC;
+			remoteInfo = TelematShelfExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE698DE21C39DAAA002584EC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DE698DDE1C39DAAA002584EC /* TelematShelfExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DE698DB31C398FE6002584EC /* Telemat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telemat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE698DB71C398FE6002584EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DE698DB91C398FE6002584EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DE698DBA1C398FE6002584EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DE698DBC1C398FE6002584EC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DE698DBD1C398FE6002584EC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DE698DC01C398FE6002584EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE698DC21C398FE6002584EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE698DC41C398FE6002584EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE698DCA1C3994F6002584EC /* sender.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sender.plist; sourceTree = "<group>"; };
+		DE698DCC1C3995D3002584EC /* VideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCell.h; sourceTree = "<group>"; };
+		DE698DCD1C3995D3002584EC /* VideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
+		DE698DD31C39DAAA002584EC /* TelematShelfExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TelematShelfExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE698DD51C39DAAA002584EC /* TVServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TVServices.framework; path = System/Library/Frameworks/TVServices.framework; sourceTree = SDKROOT; };
+		DE698DD81C39DAAA002584EC /* ServiceProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceProvider.h; sourceTree = "<group>"; };
+		DE698DD91C39DAAA002584EC /* ServiceProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceProvider.m; sourceTree = "<group>"; };
+		DE698DDB1C39DAAA002584EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE698DE41C39E9E2002584EC /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
+		DE698DE51C39E9E2002584EC /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE698DB01C398FE6002584EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE698DD01C39DAAA002584EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE698DD61C39DAAA002584EC /* TVServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE698DAA1C398FE6002584EC = {
+			isa = PBXGroup;
+			children = (
+				DE698DB51C398FE6002584EC /* Telemat */,
+				DE698DD71C39DAAA002584EC /* TelematShelfExtension */,
+				DE698DD41C39DAAA002584EC /* Frameworks */,
+				DE698DB41C398FE6002584EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE698DB41C398FE6002584EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE698DB31C398FE6002584EC /* Telemat.app */,
+				DE698DD31C39DAAA002584EC /* TelematShelfExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE698DB51C398FE6002584EC /* Telemat */ = {
+			isa = PBXGroup;
+			children = (
+				DE698DB91C398FE6002584EC /* AppDelegate.h */,
+				DE698DBA1C398FE6002584EC /* AppDelegate.m */,
+				DE698DBC1C398FE6002584EC /* ViewController.h */,
+				DE698DBD1C398FE6002584EC /* ViewController.m */,
+				DE698DCC1C3995D3002584EC /* VideoCell.h */,
+				DE698DCD1C3995D3002584EC /* VideoCell.m */,
+				DE698DE41C39E9E2002584EC /* VideoPlayerViewController.h */,
+				DE698DE51C39E9E2002584EC /* VideoPlayerViewController.m */,
+				DE698DBF1C398FE6002584EC /* Main.storyboard */,
+				DE698DCA1C3994F6002584EC /* sender.plist */,
+				DE698DC21C398FE6002584EC /* Assets.xcassets */,
+				DE698DC41C398FE6002584EC /* Info.plist */,
+				DE698DB61C398FE6002584EC /* Supporting Files */,
+			);
+			path = Telemat;
+			sourceTree = "<group>";
+		};
+		DE698DB61C398FE6002584EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE698DB71C398FE6002584EC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE698DD41C39DAAA002584EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE698DD51C39DAAA002584EC /* TVServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE698DD71C39DAAA002584EC /* TelematShelfExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DE698DD81C39DAAA002584EC /* ServiceProvider.h */,
+				DE698DD91C39DAAA002584EC /* ServiceProvider.m */,
+				DE698DDB1C39DAAA002584EC /* Info.plist */,
+			);
+			path = TelematShelfExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE698DB21C398FE6002584EC /* Telemat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE698DC71C398FE6002584EC /* Build configuration list for PBXNativeTarget "Telemat" */;
+			buildPhases = (
+				DE698DAF1C398FE6002584EC /* Sources */,
+				DE698DB01C398FE6002584EC /* Frameworks */,
+				DE698DB11C398FE6002584EC /* Resources */,
+				DE698DE21C39DAAA002584EC /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE698DDD1C39DAAA002584EC /* PBXTargetDependency */,
+			);
+			name = Telemat;
+			productName = Telemat;
+			productReference = DE698DB31C398FE6002584EC /* Telemat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE698DD21C39DAAA002584EC /* TelematShelfExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE698DE11C39DAAA002584EC /* Build configuration list for PBXNativeTarget "TelematShelfExtension" */;
+			buildPhases = (
+				DE698DCF1C39DAAA002584EC /* Sources */,
+				DE698DD01C39DAAA002584EC /* Frameworks */,
+				DE698DD11C39DAAA002584EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TelematShelfExtension;
+			productName = TelematShelfExtension;
+			productReference = DE698DD31C39DAAA002584EC /* TelematShelfExtension.appex */;
+			productType = "com.apple.product-type.tv-app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE698DAB1C398FE6002584EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Oliver Michalak";
+				TargetAttributes = {
+					DE698DB21C398FE6002584EC = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					DE698DD21C39DAAA002584EC = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = DE698DAE1C398FE6002584EC /* Build configuration list for PBXProject "Telemat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE698DAA1C398FE6002584EC;
+			productRefGroup = DE698DB41C398FE6002584EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE698DB21C398FE6002584EC /* Telemat */,
+				DE698DD21C39DAAA002584EC /* TelematShelfExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE698DB11C398FE6002584EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE698DC31C398FE6002584EC /* Assets.xcassets in Resources */,
+				DE698DCB1C3994F6002584EC /* sender.plist in Resources */,
+				DE698DC11C398FE6002584EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE698DD11C39DAAA002584EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE698DE31C39DB70002584EC /* sender.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE698DAF1C398FE6002584EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE698DE61C39E9E2002584EC /* VideoPlayerViewController.m in Sources */,
+				DE698DBE1C398FE6002584EC /* ViewController.m in Sources */,
+				DE698DCE1C3995D3002584EC /* VideoCell.m in Sources */,
+				DE698DBB1C398FE6002584EC /* AppDelegate.m in Sources */,
+				DE698DB81C398FE6002584EC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE698DCF1C39DAAA002584EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE698DDA1C39DAAA002584EC /* ServiceProvider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE698DDD1C39DAAA002584EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE698DD21C39DAAA002584EC /* TelematShelfExtension */;
+			targetProxy = DE698DDC1C39DAAA002584EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE698DBF1C398FE6002584EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE698DC01C398FE6002584EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE698DC51C398FE6002584EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		DE698DC61C398FE6002584EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE698DC81C398FE6002584EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Telemat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.Telemat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE698DC91C398FE6002584EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Telemat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.Telemat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DE698DDF1C39DAAA002584EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TelematShelfExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.Telemat.TelematShelfExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DE698DE01C39DAAA002584EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TelematShelfExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.Telemat.TelematShelfExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE698DAE1C398FE6002584EC /* Build configuration list for PBXProject "Telemat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE698DC51C398FE6002584EC /* Debug */,
+				DE698DC61C398FE6002584EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE698DC71C398FE6002584EC /* Build configuration list for PBXNativeTarget "Telemat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE698DC81C398FE6002584EC /* Debug */,
+				DE698DC91C398FE6002584EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE698DE11C39DAAA002584EC /* Build configuration list for PBXNativeTarget "TelematShelfExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE698DDF1C39DAAA002584EC /* Debug */,
+				DE698DE01C39DAAA002584EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE698DAB1C398FE6002584EC /* Project object */;
+}

@@ -1,4 +1,5 @@
 # Telemat1000_iPad
+
 Telemat1000 ist eine einfache iPad-App, die den schnellen Zugriff auf das 24/7 Live-Streaming-Angebot der deutschen Öffentlich-Rechtlichen ermöglicht. 
 
 ![Telemat Screenshot](telemat-main.jpg)
@@ -12,3 +13,7 @@ Telemat1000 wurde mit dem App-Baukasten [Composé](http://xn--getcompos-j4a.com/
 [![Alt text for your video](http://img.youtube.com/vi/_oQRx7CDY3A/0.jpg)](http://www.youtube.com/watch?v=_oQRx7CDY3A)
 
 [Youtube-Link](http://www.youtube.com/watch?v=_oQRx7CDY3A)
+
+## Telemat tvOS
+
+Basierend auf der ursprünglichen Idee entstand eine native tvOS APP, mit der die Streams auf dem Apple TV Geräten angeschaut werden können. Aufgrund der unterschiedlichen Plattform, ohne tvOS Support für Composé und der knappen Entwicklungszeit von 2h entstand eine minimale, native APP.
