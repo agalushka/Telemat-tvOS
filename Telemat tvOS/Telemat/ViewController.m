@@ -20,8 +20,8 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-
-	self.list = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"sender" withExtension:@"plist"]];
+	NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"tv" withExtension:@"json"]];
+	self.list = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 	[self.listView reloadData];
 }
 
@@ -31,16 +31,13 @@
 
 - (UICollectionViewCell*) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	VideoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:VideoCell.identifier forIndexPath:indexPath];
-	NSDictionary *dict = self.list[indexPath.row];
-	cell.title.text = dict[@"title"];
-
+	cell.info = self.list[indexPath.row];
 	return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-	NSDictionary *dict = self.list[indexPath.row];
-
-	[[VideoPlayerViewController videoPlayerWithURL:[NSURL URLWithString:dict[@"streamURL"]]] play];
+	VideoCell *cell = (VideoCell*)[collectionView cellForItemAtIndexPath:indexPath];
+	[[VideoPlayerViewController videoPlayerWithURL:cell.streamURL] play];
 }
 
 @end

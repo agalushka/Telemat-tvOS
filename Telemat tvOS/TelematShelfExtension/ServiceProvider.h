@@ -11,6 +11,5 @@
 
 @interface ServiceProvider : NSObject <TVTopShelfProvider>
 
-
 @end
 

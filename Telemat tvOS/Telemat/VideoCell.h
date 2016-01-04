@@ -12,6 +12,7 @@
 
 + (NSString*) identifier;
 
-@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (nonatomic) NSDictionary *info;
+@property (readonly, nonatomic) NSURL *streamURL;
 
 @end

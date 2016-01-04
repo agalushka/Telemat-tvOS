@@ -19,21 +19,27 @@
 }
 
 - (NSArray *)topShelfItems {
-	NSArray *list = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"sender" withExtension:@"plist"]];
+	NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"tv" withExtension:@"json"]];
+	NSArray *list = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+
 	NSMutableArray *items = [@[] mutableCopy];
 	for (NSDictionary *dict in list) {
-		TVContentItem *item = [[TVContentItem alloc] initWithContentIdentifier:[[TVContentIdentifier alloc] initWithIdentifier:dict[@"streamURL"] container:nil]];
+		TVContentItem *item = [[TVContentItem alloc] initWithContentIdentifier:[[TVContentIdentifier alloc] initWithIdentifier:dict[@"StreamURL"] container:nil]];
 		NSURLComponents *comp = [[NSURLComponents alloc] init];
 		comp.scheme = @"telemat";
 		comp.path = @"video";
-		comp.queryItems = @[[NSURLQueryItem queryItemWithName:@"identifier" value:dict[@"streamURL"]]];
+		comp.queryItems = @[[NSURLQueryItem queryItemWithName:@"identifier" value:dict[@"StreamURL"]]];
 		item.displayURL = [comp URL];
+		NSString *imageName = dict[@"Bild"];
+		if ([imageName hasPrefix:@"file:"])
+			item.imageURL = [[NSBundle mainBundle] URLForResource:[imageName substringWithRange:NSMakeRange(5, imageName.length - (5+4))] withExtension:@"png"];
+
 		item.imageShape = TVContentItemImageShapeSDTV;
-		item.title = dict[@"title"];
+		item.title = dict[@"SenderName"];
 		[items addObject:item];
 	}
 	
-	TVContentItem *topItem = [[TVContentItem alloc] initWithContentIdentifier:[[TVContentIdentifier alloc] initWithIdentifier:@"ContainerID" container:nil]];
+	TVContentItem *topItem = [[TVContentItem alloc] initWithContentIdentifier:[[TVContentIdentifier alloc] initWithIdentifier:@"Container" container:nil]];
 	topItem.topShelfItems = [items copy];
 	return @[topItem];
 }
