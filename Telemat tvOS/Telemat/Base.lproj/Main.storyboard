@@ -9,7 +9,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" id="BYZ-38-t0r" customClass="ListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -89,7 +89,7 @@
         <!--Video Player View Controller-->
         <scene sceneID="Gg9-K2-Wq2">
             <objects>
-                <viewController id="4bp-Zl-aQN" customClass="VideoPlayerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoPlayerViewController" id="4bp-Zl-aQN" customClass="VideoPlayerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mnu-5A-LBJ"/>
                         <viewControllerLayoutGuide type="bottom" id="pHe-tx-GHJ"/>

@@ -32,7 +32,9 @@
 	NSURLComponents *comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
 	NSURLQueryItem *queryItem = comp.queryItems.firstObject;
 	if (queryItem.value.length) {
-//		[[VideoPlayerViewController videoPlayerWithURL:[NSURL URLWithString:queryItem.value]] play];
+		VideoPlayerViewController *videoPlayer = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"VideoPlayerViewController"];
+		videoPlayer.index = [queryItem.value integerValue];
+		[self.window.rootViewController presentViewController:videoPlayer animated:YES completion:nil];
 	}
 }
 
