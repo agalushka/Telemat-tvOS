@@ -5,11 +5,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -61,6 +61,7 @@
                                         <connections>
                                             <outlet property="imageView" destination="SZC-bp-Aol" id="2mk-2K-YVE"/>
                                             <outlet property="titleLabel" destination="lvF-BI-0wM" id="nwO-V6-ymh"/>
+                                            <segue destination="4bp-Zl-aQN" kind="show" identifier="showChannel" id="Grz-B6-mdn"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -84,6 +85,97 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-11" y="443"/>
+        </scene>
+        <!--Video Player View Controller-->
+        <scene sceneID="Gg9-K2-Wq2">
+            <objects>
+                <viewController id="4bp-Zl-aQN" customClass="VideoPlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mnu-5A-LBJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="pHe-tx-GHJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="04S-Mo-lyz">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K9x-MD-ghE" customClass="PlayerView">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BFB-W4-Ibr">
+                                <rect key="frame" x="0.0" y="1080" width="1920" height="140"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.95294117649999999" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="c2T-lL-2UQ"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mrY-n4-iZO">
+                                    <size key="itemSize" width="200" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoCell" id="EfV-18-6lk" customClass="VideoCell">
+                                        <rect key="frame" x="0.0" y="10" width="200" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l5Q-LP-qQc">
+                                                    <rect key="frame" x="10" y="10" width="180" height="100"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhp-77-x1X">
+                                                    <rect key="frame" x="83" y="95" width="35" height="20"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hhp-77-x1X" secondAttribute="trailing" constant="10" id="3bE-wX-0bN"/>
+                                            <constraint firstItem="l5Q-LP-qQc" firstAttribute="top" secondItem="EfV-18-6lk" secondAttribute="top" constant="10" id="5rV-7a-3g5"/>
+                                            <constraint firstAttribute="trailing" secondItem="l5Q-LP-qQc" secondAttribute="trailing" constant="10" id="8oi-26-wBg"/>
+                                            <constraint firstAttribute="bottom" secondItem="l5Q-LP-qQc" secondAttribute="bottom" constant="10" id="A6G-NU-Koh"/>
+                                            <constraint firstItem="hhp-77-x1X" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EfV-18-6lk" secondAttribute="leading" constant="10" id="ACt-wx-dvX"/>
+                                            <constraint firstItem="l5Q-LP-qQc" firstAttribute="leading" secondItem="EfV-18-6lk" secondAttribute="leading" constant="10" id="BJd-mp-NrE"/>
+                                            <constraint firstItem="hhp-77-x1X" firstAttribute="centerX" secondItem="EfV-18-6lk" secondAttribute="centerX" id="Vn7-3z-UBi"/>
+                                            <constraint firstAttribute="bottom" secondItem="hhp-77-x1X" secondAttribute="bottom" constant="5" id="ffW-Qp-5Qc"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="l5Q-LP-qQc" id="vHC-Oa-3Tb"/>
+                                            <outlet property="titleLabel" destination="hhp-77-x1X" id="zcH-kq-nQ6"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4bp-Zl-aQN" id="tDd-M2-MNb"/>
+                                    <outlet property="delegate" destination="4bp-Zl-aQN" id="Wvg-jS-hJT"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.95294117649999999" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="K9x-MD-ghE" secondAttribute="trailing" id="6Wd-ZE-eyR"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="K9x-MD-ghE" secondAttribute="bottom" id="FSh-kh-7kM"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="BFB-W4-Ibr" secondAttribute="bottom" constant="-140" id="QR3-63-HYg"/>
+                            <constraint firstAttribute="topMargin" secondItem="K9x-MD-ghE" secondAttribute="top" id="X2Q-7U-jCu"/>
+                            <constraint firstItem="K9x-MD-ghE" firstAttribute="leading" secondItem="04S-Mo-lyz" secondAttribute="leading" id="bXH-Gz-x49"/>
+                            <constraint firstAttribute="trailing" secondItem="BFB-W4-Ibr" secondAttribute="trailing" id="jbD-Jw-Eul"/>
+                            <constraint firstItem="BFB-W4-Ibr" firstAttribute="leading" secondItem="04S-Mo-lyz" secondAttribute="leading" id="rea-Vz-IDV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="listBottomConstraint" destination="QR3-63-HYg" id="Ztq-T9-WPL"/>
+                        <outlet property="listView" destination="BFB-W4-Ibr" id="wBT-Jp-wMF"/>
+                        <outlet property="playerView" destination="K9x-MD-ghE" id="k5y-Ve-tsi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpx-Lw-ipd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1998" y="443"/>
         </scene>
     </scenes>
 </document>

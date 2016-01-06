@@ -8,12 +8,8 @@
 
 #import <AVKit/AVKit.h>
 
-@interface VideoPlayerViewController : AVPlayerViewController
+@interface VideoPlayerViewController : UIViewController
 
-@property (nonatomic) NSURL *url;
-
-+ (instancetype) videoPlayerWithURL:(NSURL*)url;
-
-- (void) play;
+@property (nonatomic) NSUInteger index;
 
 @end

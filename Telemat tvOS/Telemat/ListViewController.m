@@ -6,21 +6,20 @@
 //  Copyright © 2016 Oliver Michalak. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ListViewController.h"
 #import "VideoPlayerViewController.h"
 #import "VideoCell.h"
 
-@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ListViewController () <UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *listView;
 @property (nonatomic) NSArray *list;
-
 @end
 
-@implementation ViewController
+@implementation ListViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"tv" withExtension:@"json"]];
+	NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"channel" withExtension:@"json"]];
 	self.list = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 	[self.listView reloadData];
 }
@@ -35,9 +34,11 @@
 	return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-	VideoCell *cell = (VideoCell*)[collectionView cellForItemAtIndexPath:indexPath];
-	[[VideoPlayerViewController videoPlayerWithURL:cell.streamURL] play];
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([segue.identifier isEqualToString:@"showChannel"]) {
+		VideoPlayerViewController *videoPlayer = segue.destinationViewController;
+		videoPlayer.index = ((NSIndexPath*)[self.listView indexPathsForSelectedItems].firstObject).row;
+	}
 }
 
 @end

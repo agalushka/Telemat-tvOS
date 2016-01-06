@@ -19,7 +19,7 @@
 }
 
 - (NSArray *)topShelfItems {
-	NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"tv" withExtension:@"json"]];
+	NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"channel" withExtension:@"json"]];
 	NSArray *list = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 
 	NSMutableArray *items = [@[] mutableCopy];

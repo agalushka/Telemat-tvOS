@@ -32,7 +32,7 @@
 	NSURLComponents *comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
 	NSURLQueryItem *queryItem = comp.queryItems.firstObject;
 	if (queryItem.value.length) {
-		[[VideoPlayerViewController videoPlayerWithURL:[NSURL URLWithString:queryItem.value]] play];
+//		[[VideoPlayerViewController videoPlayerWithURL:[NSURL URLWithString:queryItem.value]] play];
 	}
 }
 
