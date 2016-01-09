@@ -17,6 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
 	if (launchOptions[UIApplicationLaunchOptionsURLKey]) {
 		[self openURL:launchOptions[UIApplicationLaunchOptionsURLKey]];
 	}
@@ -32,9 +33,9 @@
 	NSURLComponents *comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
 	NSURLQueryItem *queryItem = comp.queryItems.firstObject;
 	if (queryItem.value.length) {
+		[[NSUserDefaults standardUserDefaults] setInteger:[queryItem.value integerValue] forKey:@"lastChannel"];
 		VideoPlayerViewController *videoPlayer = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"VideoPlayerViewController"];
-		videoPlayer.index = [queryItem.value integerValue];
-		[self.window.rootViewController presentViewController:videoPlayer animated:YES completion:nil];
+		self.window.rootViewController = videoPlayer;
 	}
 }
 

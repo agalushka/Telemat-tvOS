@@ -11,6 +11,9 @@
 #import <AVKit/AVKit.h>
 #import "PlayerView.h"
 
+#define kAnimationTimer (1)
+#define kRowHeight (240)
+
 @interface VideoPlayerViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet PlayerView *playerView;
 @property (weak, nonatomic) IBOutlet UICollectionView *listView;
@@ -28,6 +31,7 @@
 
 	NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"channel" withExtension:@"json"]];
 	self.list = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+	self.listBottomConstraint.constant = -kRowHeight;
 	[self.listView reloadData];
 
 	self.player = [[AVPlayer alloc] init];
@@ -45,23 +49,30 @@
 	swipeDownGesture.direction = UISwipeGestureRecognizerDirectionDown;
 	[self.view addGestureRecognizer:swipeDownGesture];
 
-	NSDictionary *info = self.list[self.index];
-	[self.player replaceCurrentItemWithPlayerItem:[AVPlayerItem playerItemWithURL:[NSURL URLWithString:info[@"StreamURL"]]]];
-	[self.player seekToTime:CMTimeMakeWithSeconds(0, 1) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
-	[self.player play];
-
-	[self.listView selectItemAtIndexPath:[NSIndexPath indexPathForRow:self.index inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-	[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(upd:) userInfo:nil repeats:YES];
 }
 
-- (void)upd:(NSTimer *)timer {
-	NSLog(@"upd %@", self.preferredFocusedView);
+- (void) viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	NSUInteger index = [[NSUserDefaults standardUserDefaults] integerForKey:@"lastChannel"];
+	[self playChannel:index];
+	[self.listView selectItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 
 	[self.player pause];
+}
+
+- (void) playChannel:(NSInteger) index {
+	NSDictionary *info = self.list[index];
+	[self.player replaceCurrentItemWithPlayerItem:[AVPlayerItem playerItemWithURL:[NSURL URLWithString:info[@"StreamURL"]]]];
+	[self.player seekToTime:CMTimeMakeWithSeconds(0, 1) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
+	[self.player play];
+
+	[[NSUserDefaults standardUserDefaults] setInteger:index forKey:@"lastChannel"];
+	[self startHideTimer];
 }
 
 - (UIView*) preferredFocusedView {
@@ -82,27 +93,25 @@
 		}
 	}
 	else if (self.previousCell) {
-		[self.player replaceCurrentItemWithPlayerItem:[AVPlayerItem playerItemWithURL:self.previousCell.streamURL]];
-		[self.player seekToTime:CMTimeMakeWithSeconds(0, 1) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
-		[self.player play];
-		[self startHideTimer];
+		NSIndexPath *indexPath = [self.listView indexPathForCell:self.previousCell];
+		[self playChannel:indexPath.row];
 	}
 }
 
 - (void) swipe:(UISwipeGestureRecognizer*)gesture {
-//	if (gesture.state == UIGestureRecognizerStateEnded) {
-		if (gesture.direction == UISwipeGestureRecognizerDirectionUp)
-			[self showMenu];
-		else if (gesture.direction == UISwipeGestureRecognizerDirectionDown)
-			[self hideMenu];
-//	}
+	if (gesture.direction == UISwipeGestureRecognizerDirectionUp)
+		[self showMenu];
+	else if (gesture.direction == UISwipeGestureRecognizerDirectionDown)
+		[self hideMenu];
 }
 
 - (void) showMenu {
 	if (self.listView.hidden) {
 		self.listView.hidden = NO;
-		[UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+		[self.listView layoutIfNeeded];
+		[UIView animateWithDuration:kAnimationTimer delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
 			self.listBottomConstraint.constant = 0;
+			((UICollectionViewFlowLayout*)self.listView.collectionViewLayout).scrollDirection = UICollectionViewScrollDirectionHorizontal;
 			[self.listView layoutIfNeeded];
 		} completion:^(BOOL finished) {
 			[self setNeedsFocusUpdate];
@@ -115,8 +124,10 @@
 	[self.hideTimer invalidate];
 	self.hideTimer = nil;
 	if (!self.listView.hidden) {
-		[UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-			self.listBottomConstraint.constant = -CGRectGetHeight(self.listView.frame);
+		[self.listView layoutIfNeeded];
+		[UIView animateWithDuration:kAnimationTimer delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+			self.listBottomConstraint.constant = -kRowHeight;
+			((UICollectionViewFlowLayout*)self.listView.collectionViewLayout).scrollDirection = UICollectionViewScrollDirectionHorizontal;
 			[self.listView layoutIfNeeded];
 		} completion:^(BOOL finished) {
 			self.listView.hidden = YES;
@@ -130,6 +141,8 @@
 	self.hideTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(hideMenu) userInfo:nil repeats:NO];
 }
 
+#pragma mark UICollectionViewDataSource
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 	return self.list.count;
 }
@@ -137,7 +150,7 @@
 - (UICollectionViewCell*) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	VideoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:VideoCell.identifier forIndexPath:indexPath];
 	cell.info = self.list[indexPath.row];
-	if (!self.previousCell && indexPath.row == self.index) {
+	if (!self.previousCell && indexPath.row == [[NSUserDefaults standardUserDefaults] integerForKey:@"lastChannel"]) {
 		self.previousCell = cell;
 		[self setNeedsFocusUpdate];
 	}

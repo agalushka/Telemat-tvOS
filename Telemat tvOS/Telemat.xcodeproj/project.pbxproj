@@ -52,7 +52,6 @@
 		DE5F69991C3C652000FC2C99 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5F69981C3C652000FC2C99 /* PlayerView.m */; };
 		DE698DB81C398FE6002584EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE698DB71C398FE6002584EC /* main.m */; };
 		DE698DBB1C398FE6002584EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE698DBA1C398FE6002584EC /* AppDelegate.m */; };
-		DE698DBE1C398FE6002584EC /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE698DBD1C398FE6002584EC /* ListViewController.m */; };
 		DE698DC11C398FE6002584EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE698DBF1C398FE6002584EC /* Main.storyboard */; };
 		DE698DC31C398FE6002584EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE698DC21C398FE6002584EC /* Assets.xcassets */; };
 		DE698DCE1C3995D3002584EC /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE698DCD1C3995D3002584EC /* VideoCell.m */; };
@@ -114,8 +113,6 @@
 		DE698DB71C398FE6002584EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE698DB91C398FE6002584EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE698DBA1C398FE6002584EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DE698DBC1C398FE6002584EC /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
-		DE698DBD1C398FE6002584EC /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		DE698DC01C398FE6002584EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE698DC21C398FE6002584EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE698DC41C398FE6002584EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,17 +173,6 @@
 			name = logo;
 			sourceTree = "<group>";
 		};
-		DE5F699A1C3C670F00FC2C99 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				DE698DBC1C398FE6002584EC /* ListViewController.h */,
-				DE698DBD1C398FE6002584EC /* ListViewController.m */,
-				DE698DCC1C3995D3002584EC /* VideoCell.h */,
-				DE698DCD1C3995D3002584EC /* VideoCell.m */,
-			);
-			name = List;
-			sourceTree = "<group>";
-		};
 		DE5F699B1C3C671800FC2C99 /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +180,8 @@
 				DE698DE51C39E9E2002584EC /* VideoPlayerViewController.m */,
 				DE5F69971C3C652000FC2C99 /* PlayerView.h */,
 				DE5F69981C3C652000FC2C99 /* PlayerView.m */,
+				DE698DCC1C3995D3002584EC /* VideoCell.h */,
+				DE698DCD1C3995D3002584EC /* VideoCell.m */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -222,7 +210,6 @@
 			children = (
 				DE698DB91C398FE6002584EC /* AppDelegate.h */,
 				DE698DBA1C398FE6002584EC /* AppDelegate.m */,
-				DE5F699A1C3C670F00FC2C99 /* List */,
 				DE5F699B1C3C671800FC2C99 /* Player */,
 				DE698DBF1C398FE6002584EC /* Main.storyboard */,
 				DE5F69571C3B0AB100FC2C99 /* channel.json */,
@@ -404,7 +391,6 @@
 			files = (
 				DE698DE61C39E9E2002584EC /* VideoPlayerViewController.m in Sources */,
 				DE5F69991C3C652000FC2C99 /* PlayerView.m in Sources */,
-				DE698DBE1C398FE6002584EC /* ListViewController.m in Sources */,
 				DE698DCE1C3995D3002584EC /* VideoCell.m in Sources */,
 				DE698DBB1C398FE6002584EC /* AppDelegate.m in Sources */,
 				DE698DB81C398FE6002584EC /* main.m in Sources */,

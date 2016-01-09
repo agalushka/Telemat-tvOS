@@ -10,6 +10,4 @@
 
 @interface VideoPlayerViewController : UIViewController
 
-@property (nonatomic) NSUInteger index;
-
 @end
