@@ -16,9 +16,11 @@ Telemat1000 wurde mit dem App-Baukasten [Composé](http://xn--getcompos-j4a.com/
 
 # Telemat tvOS
 
-Basierend auf der ursprünglichen Idee entstand eine native tvOS APP, mit der die Streams auf dem Apple TV Geräten angeschaut werden können. Aufgrund der unterschiedlichen Plattform, ohne tvOS Support für Composé und der knappen Entwicklungszeit von 2h entstand eine minimale, native APP.
+Basierend auf der ursprünglichen Idee entstand eine native tvOS APP, mit der die Streams auf dem Apple TV Geräten angeschaut werden können.
 
-- Wechsel auf Original Logos (offen)
-- Custom Video Player (Play/Pause) mit Kanalübersicht (swipe up/down)
+In dem VideoPlayer kann man durch Wischgeste von unten die Kanäle einblenden lassen und darin mit rechts/links wechseln.
+
+Die Logos entstammen https://github.com/3PO/Senderlogos und wurden nur leicht angepasst.
+
 - Anzeige der aktuellen Sendung (offen, parsen des Program Links)
 - Refactor der Channel-Liste (offen mit background Update der aktuellen Sendung)

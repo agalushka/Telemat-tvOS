@@ -149,6 +149,7 @@
 		DE5F69591C3B0F4300FC2C99 /* logo */ = {
 			isa = PBXGroup;
 			children = (
+				DE5F69671C3B0F6F00FC2C99 /* ard.png */,
 				DE5F695A1C3B0F6F00FC2C99 /* br-alpha.png */,
 				DE5F695B1C3B0F6F00FC2C99 /* rbb.png */,
 				DE5F695C1C3B0F6F00FC2C99 /* info.png */,
@@ -162,7 +163,6 @@
 				DE5F69641C3B0F6F00FC2C99 /* swr.png */,
 				DE5F69651C3B0F6F00FC2C99 /* phoenix.png */,
 				DE5F69661C3B0F6F00FC2C99 /* 3sat.png */,
-				DE5F69671C3B0F6F00FC2C99 /* ard.png */,
 				DE5F69681C3B0F6F00FC2C99 /* kika.png */,
 				DE5F69691C3B0F6F00FC2C99 /* ndr.png */,
 				DE5F696A1C3B0F6F00FC2C99 /* tagesschau24.png */,

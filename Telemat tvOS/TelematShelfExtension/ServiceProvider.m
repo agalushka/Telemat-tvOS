@@ -23,7 +23,7 @@
 	NSArray *list = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 
 	NSMutableArray *items = [@[] mutableCopy];
-	[list enumerateObjectsUsingBlock:^(NSDictionary *info, NSUInteger idx, BOOL * _Nonnull stop) {
+	[list enumerateObjectsUsingBlock:^(NSDictionary *info, NSUInteger idx, BOOL *stop) {
 		TVContentItem *item = [[TVContentItem alloc] initWithContentIdentifier:[[TVContentIdentifier alloc] initWithIdentifier:info[@"StreamURL"] container:nil]];
 		NSURLComponents *comp = [[NSURLComponents alloc] init];
 		comp.scheme = @"telemat";
@@ -34,7 +34,7 @@
 		if ([imageName hasPrefix:@"file:"])
 			item.imageURL = [[NSBundle mainBundle] URLForResource:[imageName substringWithRange:NSMakeRange(5, imageName.length - (5+4))] withExtension:@"png"];
 		
-		item.imageShape = TVContentItemImageShapeSDTV;
+		item.imageShape = TVContentItemImageShapeWide;
 		item.title = info[@"SenderName"];
 		[items addObject:item];
 	}];
