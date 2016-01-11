@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Channel.h"
 
 @interface VideoCell : UICollectionViewCell
 
 + (NSString*) identifier;
 
-@property (nonatomic) NSDictionary *info;
-@property (readonly, nonatomic) NSURL *streamURL;
+@property (nonatomic) Channel *channel;
 
 @end

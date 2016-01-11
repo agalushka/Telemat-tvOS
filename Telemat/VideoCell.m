@@ -28,20 +28,13 @@
 	self.titleLabel.layer.shadowOpacity = 1;
 }
 
-- (void) setInfo:(NSDictionary *)info {
-	_info = info;
-	
-	self.titleLabel.text = info[@"SenderName"];
-	self.titleLabel.hidden = !self.focused;
-	NSString *imageName = info[@"Bild"];
-	if ([imageName hasPrefix:@"file:"])
-		self.imageView.image = [UIImage imageNamed:[imageName substringFromIndex:5]];
-	else
-		self.imageView.image = nil;
-}
 
-- (NSURL*) streamURL {
-	return [NSURL URLWithString:self.info[@"StreamURL"]];
+- (void) setChannel:(Channel *)channel {
+	_channel = channel;
+	
+	self.titleLabel.text = channel.title;
+	self.titleLabel.hidden = !self.focused;
+	self.imageView.image = channel.image;
 }
 
 - (void)didUpdateFocusInContext:(UIFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator {

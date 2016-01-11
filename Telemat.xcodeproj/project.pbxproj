@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE44DB641C441D8300C957EE /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE44DB631C441D8300C957EE /* Channel.m */; };
 		DE5F69581C3B0AB100FC2C99 /* channel.json in Resources */ = {isa = PBXBuildFile; fileRef = DE5F69571C3B0AB100FC2C99 /* channel.json */; };
 		DE5F696C1C3B0F6F00FC2C99 /* br-alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5F695A1C3B0F6F00FC2C99 /* br-alpha.png */; };
 		DE5F696D1C3B0F6F00FC2C99 /* rbb.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5F695B1C3B0F6F00FC2C99 /* rbb.png */; };
@@ -86,6 +87,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE44DB621C441D8300C957EE /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		DE44DB631C441D8300C957EE /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
 		DE5F69571C3B0AB100FC2C99 /* channel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = channel.json; sourceTree = "<group>"; };
 		DE5F695A1C3B0F6F00FC2C99 /* br-alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "br-alpha.png"; sourceTree = "<group>"; };
 		DE5F695B1C3B0F6F00FC2C99 /* rbb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rbb.png; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				DE5F69981C3C652000FC2C99 /* PlayerView.m */,
 				DE698DCC1C3995D3002584EC /* VideoCell.h */,
 				DE698DCD1C3995D3002584EC /* VideoCell.m */,
+				DE44DB621C441D8300C957EE /* Channel.h */,
+				DE44DB631C441D8300C957EE /* Channel.m */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE698DE61C39E9E2002584EC /* VideoPlayerViewController.m in Sources */,
+				DE44DB641C441D8300C957EE /* Channel.m in Sources */,
 				DE5F69991C3C652000FC2C99 /* PlayerView.m in Sources */,
 				DE698DCE1C3995D3002584EC /* VideoCell.m in Sources */,
 				DE698DBB1C398FE6002584EC /* AppDelegate.m in Sources */,
