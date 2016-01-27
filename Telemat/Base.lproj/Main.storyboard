@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="4bp-Zl-aQN">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="4bp-Zl-aQN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -70,6 +70,10 @@
                                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l5Q-LP-qQc">
                                                                 <rect key="frame" x="30" y="20" width="340" height="180"/>
                                                             </imageView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFG-W8-ow2" customClass="PlayerView">
+                                                                <rect key="frame" x="30" y="20" width="340" height="180"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhp-77-x1X">
                                                                 <rect key="frame" x="167" y="196" width="67" height="39"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
@@ -82,15 +86,20 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hhp-77-x1X" secondAttribute="trailing" constant="10" id="3bE-wX-0bN"/>
                                                         <constraint firstItem="l5Q-LP-qQc" firstAttribute="top" secondItem="EfV-18-6lk" secondAttribute="top" constant="20" id="5rV-7a-3g5"/>
+                                                        <constraint firstItem="lFG-W8-ow2" firstAttribute="trailing" secondItem="l5Q-LP-qQc" secondAttribute="trailing" id="7H8-IA-dNH"/>
                                                         <constraint firstAttribute="trailing" secondItem="l5Q-LP-qQc" secondAttribute="trailing" constant="30" id="8oi-26-wBg"/>
                                                         <constraint firstAttribute="bottom" secondItem="l5Q-LP-qQc" secondAttribute="bottom" constant="40" id="A6G-NU-Koh"/>
                                                         <constraint firstItem="hhp-77-x1X" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EfV-18-6lk" secondAttribute="leading" constant="10" id="ACt-wx-dvX"/>
+                                                        <constraint firstItem="lFG-W8-ow2" firstAttribute="bottom" secondItem="l5Q-LP-qQc" secondAttribute="bottom" id="AKP-iS-FGI"/>
                                                         <constraint firstItem="l5Q-LP-qQc" firstAttribute="leading" secondItem="EfV-18-6lk" secondAttribute="leading" constant="30" id="BJd-mp-NrE"/>
+                                                        <constraint firstItem="lFG-W8-ow2" firstAttribute="top" secondItem="l5Q-LP-qQc" secondAttribute="top" id="MVi-Ae-RYH"/>
                                                         <constraint firstItem="hhp-77-x1X" firstAttribute="centerX" secondItem="EfV-18-6lk" secondAttribute="centerX" id="Vn7-3z-UBi"/>
                                                         <constraint firstAttribute="bottom" secondItem="hhp-77-x1X" secondAttribute="bottom" constant="5" id="ffW-Qp-5Qc"/>
+                                                        <constraint firstItem="lFG-W8-ow2" firstAttribute="leading" secondItem="l5Q-LP-qQc" secondAttribute="leading" id="zzb-6D-e1F"/>
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="imageView" destination="l5Q-LP-qQc" id="vHC-Oa-3Tb"/>
+                                                        <outlet property="playerView" destination="lFG-W8-ow2" id="1Jq-1F-EJW"/>
                                                         <outlet property="titleLabel" destination="hhp-77-x1X" id="zcH-kq-nQ6"/>
                                                     </connections>
                                                 </collectionViewCell>

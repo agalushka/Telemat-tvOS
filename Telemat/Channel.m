@@ -60,4 +60,8 @@
 	}] resume];
 }
 
+- (NSString*) description {
+	return self.title;
+}
+
 @end

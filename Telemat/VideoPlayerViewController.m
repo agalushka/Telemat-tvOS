@@ -115,6 +115,7 @@
 		}
 	}
 	else if (self.previousCell) {
+		[self hideMenu];
 		NSIndexPath *indexPath = [self.listView indexPathForCell:self.previousCell];
 		[self playChannel:indexPath.row];
 	}
@@ -165,6 +166,7 @@
 
 - (void) showMenu {
 	if (self.menuContainer.hidden) {
+		[self.player pause];
 		self.menuContainer.hidden = NO;
 		[self.menuContainer layoutIfNeeded];
 		[UIView animateWithDuration:kAnimationTimer delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -181,6 +183,7 @@
 	[self.hideTimer invalidate];
 	self.hideTimer = nil;
 	if (!self.menuContainer.hidden) {
+		[self.player play];
 		[self.menuContainer layoutIfNeeded];
 		[UIView animateWithDuration:kAnimationTimer delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
 			self.listBottomConstraint.constant = -kMenuHeight;
@@ -194,7 +197,7 @@
 
 - (void) startHideTimer {
 	[self.hideTimer invalidate];
-	self.hideTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(hide) userInfo:nil repeats:NO];
+	self.hideTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(hide) userInfo:nil repeats:NO];
 }
 
 - (void) hide {
