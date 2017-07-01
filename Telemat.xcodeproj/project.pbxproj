@@ -60,6 +60,7 @@
 		DE698DDA1C39DAAA002584EC /* ServiceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DE698DD91C39DAAA002584EC /* ServiceProvider.m */; };
 		DE698DDE1C39DAAA002584EC /* TelematShelfExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE698DD31C39DAAA002584EC /* TelematShelfExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE698DE61C39E9E2002584EC /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE698DE51C39E9E2002584EC /* VideoPlayerViewController.m */; };
+		DEDE17271F08306B001FECFC /* one.png in Resources */ = {isa = PBXBuildFile; fileRef = DEDE17261F08306B001FECFC /* one.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		DE698DDB1C39DAAA002584EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE698DE41C39E9E2002584EC /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
 		DE698DE51C39E9E2002584EC /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
+		DEDE17261F08306B001FECFC /* one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = one.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				DE5F69611C3B0F6F00FC2C99 /* wdr.png */,
 				DE5F69621C3B0F6F00FC2C99 /* arte.png */,
 				DE5F69631C3B0F6F00FC2C99 /* kultur.png */,
+				DEDE17261F08306B001FECFC /* one.png */,
 				DE5F69641C3B0F6F00FC2C99 /* swr.png */,
 				DE5F69651C3B0F6F00FC2C99 /* phoenix.png */,
 				DE5F69661C3B0F6F00FC2C99 /* 3sat.png */,
@@ -302,6 +305,7 @@
 				TargetAttributes = {
 					DE698DB21C398FE6002584EC = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 6ZU459JA6J;
 					};
 					DE698DD21C39DAAA002584EC = {
 						CreatedOnToolsVersion = 7.2;
@@ -345,6 +349,7 @@
 				DE5F69581C3B0AB100FC2C99 /* channel.json in Resources */,
 				DE5F696C1C3B0F6F00FC2C99 /* br-alpha.png in Resources */,
 				DE5F69711C3B0F6F00FC2C99 /* br.png in Resources */,
+				DEDE17271F08306B001FECFC /* one.png in Resources */,
 				DE5F696F1C3B0F6F00FC2C99 /* mdr.png in Resources */,
 				DE5F69781C3B0F6F00FC2C99 /* 3sat.png in Resources */,
 				DE5F69771C3B0F6F00FC2C99 /* phoenix.png in Resources */,
@@ -518,6 +523,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Telemat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.Telemat;
@@ -530,6 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Telemat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.Telemat;

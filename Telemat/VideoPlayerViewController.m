@@ -89,9 +89,9 @@
 	[self.player play];
 
 	self.nameView.text = @"";
-	[channel requestCurrentName:^(NSString *name) {
-		self.nameView.text = name;
-	}];
+//	[channel requestCurrentName:^(NSString *name) {
+//		self.nameView.text = name;
+//	}];
 
 	[[NSUserDefaults standardUserDefaults] setInteger:index forKey:@"lastChannel"];
 	[self startHideTimer];
